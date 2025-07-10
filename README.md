@@ -1,24 +1,27 @@
-# Sayyid Haidar - Personal Portfolio
+# Sayyid Haidar - Portfolio
 
-A modern, minimalist personal portfolio website showcasing my journey as a Senior Full Stack Developer. Built with React, TypeScript, and Tailwind CSS for optimal performance and maintainability.
+[![Deploy to GitHub Pages](https://github.com/sayyid-haidar/v2.sayyid.dev/actions/workflows/deploy.yml/badge.svg)](https://github.com/sayyid-haidar/v2.sayyid.dev/actions/workflows/deploy.yml)
+
+Modern, responsive portfolio website for Sayyid Haidar - Backend Engineer specializing in AI Vision Computing.
+
+🔗 **Live Site**: [https://sayyid-haidar.github.io/v2.sayyid.dev/](https://sayyid-haidar.github.io/v2.sayyid.dev/)
 
 ## 🚀 Features
 
-- **Minimalist Design**: Clean and professional layout focusing on content and user experience
-- **Fully Responsive**: Optimized for all devices from mobile to desktop
-- **Lightning Fast**: Built with Vite for sub-second loading times
-- **Static Generation**: Deployable as static files anywhere
-- **SEO Optimized**: Complete meta tags and social media optimization
-- **Accessibility First**: Built with WCAG guidelines in mind
-- **Modern Architecture**: Component-based structure for easy maintenance
+- 🎨 Modern, clean design with professional layout
+- 📱 Fully responsive across all devices
+- ⚡ Fast loading with optimized assets
+- 🔍 SEO optimized with structured data
+- 🚀 Automatic deployment via GitHub Actions
+- ♿ Accessible design following best practices
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: React 18 with TypeScript for type safety
-- **Styling**: Tailwind CSS 3.4 with custom components
-- **Build Tool**: Vite for fast development and optimized builds
-- **Icons**: Lucide React for consistent iconography
-- **Fonts**: Inter from Google Fonts for beautiful typography
+- **Frontend**: React 19, TypeScript
+- **Styling**: Tailwind CSS
+- **Build Tool**: Vite
+- **Deployment**: GitHub Pages via GitHub Actions
+- **Icons**: Lucide React
 
 ## � Sections
 
