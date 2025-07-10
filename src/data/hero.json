@@ -1,0 +1,15 @@
+{
+  "name": "Sayyid Haidar",
+  "title": "Backend",
+  "subtitle": "Engineer",
+  "description": "Experienced in building production-ready systems with Java Spring, Node.js, PostgreSQL, AWS and Computer Vision integration",
+  "currentPosition": {
+    "title": "Student Gov President",
+    "company": "Cakrawala University",
+    "description": "Currently at"
+  },
+  "profileImage": {
+    "src": "/assets/sayyid-haidar-profile.jpg",
+    "alt": "Sayyid Haidar - Backend Engineer"
+  }
+}

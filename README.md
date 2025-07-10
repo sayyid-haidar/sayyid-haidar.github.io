@@ -12,7 +12,8 @@ Modern, responsive portfolio website for Sayyid Haidar - Backend Engineer specia
 - 📱 Fully responsive across all devices
 - ⚡ Fast loading with optimized assets
 - 🔍 SEO optimized with structured data
-- 🚀 Automatic deployment via GitHub Actions
+- �️ **JSON-driven content** - Easy to maintain and update
+- �🚀 Automatic deployment via GitHub Actions
 - ♿ Accessible design following best practices
 
 ## 🛠️ Tech Stack
@@ -22,17 +23,84 @@ Modern, responsive portfolio website for Sayyid Haidar - Backend Engineer specia
 - **Build Tool**: Vite
 - **Deployment**: GitHub Pages via GitHub Actions
 - **Icons**: Lucide React
+- **Content Management**: JSON-based data structure
 
-## � Sections
+## 📁 Project Structure
 
-1. **Hero Section** - Introduction with professional photo and key information
-2. **About Section** - Personal background and core technologies
-3. **Experience Section** - Professional journey and achievements
-4. **Skills Section** - Technical expertise organized by categories
-5. **Projects Section** - Featured work with live demos and source code
-6. **Contact Section** - Multiple ways to get in touch
+```
+src/
+├── components/           # React components
+├── data/                # JSON content files
+│   ├── hero.json        # Hero section data
+│   ├── profile.json     # Profile data (stats, contact, nav)
+│   ├── what-i-do.json   # Skills & services data
+│   ├── experiences.json # Work experience data
+│   └── employment-config.json # Employment types & styling
+├── App.tsx              # Main application component
+└── main.tsx             # Application entry point
+```
 
-## �🚀 Getting Started
+## 📊 Data Structure
+
+This project uses **JSON-driven content management** for easy maintenance:
+
+### Core Data Files
+
+| File | Purpose | Contains |
+|------|---------|----------|
+| `hero.json` | Hero section | Name, title, description, current position, profile image |
+| `profile.json` | Profile data | Stats, social links, contact info, navigation menu |
+| `what-i-do.json` | Skills/Services | Technical expertise with descriptions and technologies |
+| `experiences.json` | Work history | Professional experience timeline |
+| `employment-config.json` | Styling config | Employment types with colors and border styles |
+
+### Key Benefits
+
+- ✅ **Easy Updates**: Modify content without touching React code
+- ✅ **Maintainable**: Centralized data management
+- ✅ **Scalable**: Easy to add new sections or modify existing ones
+- ✅ **Type-safe**: JSON structure validated by TypeScript
+
+## 📝 Content Management
+
+### Quick Updates
+
+1. **Personal Info**: Edit `hero.json` and `profile.json`
+2. **Skills/Services**: Edit `what-i-do.json` 
+3. **Work History**: Edit `experiences.json`
+4. **Contact Details**: Edit `profile.json` → `contact` section
+5. **Statistics**: Edit `profile.json` → `stats` array
+6. **Social Links**: Edit `profile.json` → `socialLinks` array
+
+### Example: Adding New Experience
+
+```json
+{
+  "id": "new-job",
+  "title": "New Position Title",
+  "company": "Company Name",
+  "location": "City, Country",
+  "startDate": "Jan 2025",
+  "endDate": "Present",
+  "type": "Full-time",
+  "description": "Your role description here...",
+  "borderStyle": "current"
+}
+```
+
+### Example: Adding New Skill
+
+```json
+{
+  "id": "new-skill",
+  "icon": "NS",
+  "title": "New Skill Area",
+  "description": "Description of your expertise...",
+  "technologies": ["Tech1", "Tech2", "Tech3"]
+}
+```
+
+## 🚀 Getting Started
 
 ### Prerequisites
 
@@ -48,6 +116,113 @@ cd v2.sayyid.dev
 ```
 
 2. **Install dependencies**:
+```bash
+npm install
+```
+
+3. **Start development server**:
+```bash
+npm run dev
+```
+
+4. **Open in browser**: Visit `http://localhost:3001`
+
+### Build & Deployment
+
+```bash
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+
+# Deploy (automatic via GitHub Actions)
+git push origin main
+```
+
+## 🎨 Customization
+
+### Styling
+
+- **Colors**: Modify Tailwind classes in components
+- **Typography**: Update font classes and sizes
+- **Layout**: Adjust container widths in `src/index.css`
+
+### Employment Types & Colors
+
+Edit `employment-config.json` to customize:
+
+```json
+{
+  "employmentTypes": {
+    "Custom-Type": {
+      "label": "Custom Type",
+      "color": "text-custom-color"
+    }
+  },
+  "borderColors": {
+    "priority": "border-custom-color"
+  }
+}
+```
+
+## 📱 Sections Overview
+
+1. **Hero Section** - Professional introduction with stats and CTA
+2. **What I Do** - Three main expertise areas with technologies
+3. **Experience** - Professional timeline with employment types
+4. **Contact** - Multiple contact methods and social links
+
+## 🔧 Configuration
+
+### Environment Setup
+
+No environment variables required for basic functionality.
+
+### Asset Management
+
+- **Resume**: Place in `/public/assets/` and update `profile.json`
+- **Images**: Store in `/public/assets/` and reference in JSON files
+- **Icons**: Using Lucide React icon library
+
+## 📈 Performance
+
+- ⚡ Vite for fast builds and HMR
+- 🗜️ Optimized asset bundling
+- 📱 Responsive images with lazy loading
+- 🎯 Minimal bundle size with tree shaking
+
+## 🚢 Deployment
+
+Automatic deployment via GitHub Actions to GitHub Pages:
+
+1. Push to `main` branch
+2. GitHub Actions builds the project
+3. Deploys to GitHub Pages automatically
+4. Available at your GitHub Pages URL
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📞 Contact
+
+**Sayyid Haidar**
+- 📧 Email: sayyid.abdul.aziz.haidar@gmail.com
+- 💼 LinkedIn: [sayyid-abdul-aziz-haidar](https://www.linkedin.com/in/sayyid-abdul-aziz-haidar-3a9230146/)
+- 🐙 GitHub: [sayyid-haidar](https://github.com/sayyid-haidar)
+
+---
+
+*Built with ❤️ using React, TypeScript, and Tailwind CSS*
 ```bash
 npm install
 ```

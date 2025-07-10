@@ -4,6 +4,18 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  safelist: [
+    // Employment type colors
+    'text-emerald-600',
+    'text-blue-600', 
+    'text-purple-600',
+    'text-rose-600',
+    'text-amber-600',
+    // Border colors
+    'border-gray-900',
+    'border-gray-300',
+    'border-gray-200',
+  ],
   theme: {
     extend: {
       fontFamily: {

@@ -1,0 +1,54 @@
+{
+  "stats": [
+    {
+      "value": "4+",
+      "label": "Years Exp"
+    },
+    {
+      "value": "100K+",
+      "label": "Users Served"
+    },
+    {
+      "value": "15+",
+      "label": "Projects Built"
+    },
+    {
+        "value": "∞",
+      "label": "Learning"
+    }
+  ],
+  "socialLinks": [
+    {
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/in/sayyid-abdul-aziz-haidar-3a9230146/",
+      "external": true
+    },
+    {
+      "name": "GitHub",
+      "url": "https://github.com/sayyid-haidar",
+      "external": true
+    }
+  ],
+  "contact": {
+    "email": "sayyid.abdul.aziz.haidar@gmail.com",
+    "resumePath": "/assets/Sayyid-Haidar-Resume.pdf",
+    "availability": {
+      "status": "Available",
+      "description": "for new opportunities"
+    }
+  },
+  "navigation": [
+    {
+      "name": "About",
+      "href": "#about"
+    },
+    {
+      "name": "Experience", 
+      "href": "#experience"
+    },
+    {
+      "name": "Contact",
+      "href": "#contact"
+    }
+  ]
+}

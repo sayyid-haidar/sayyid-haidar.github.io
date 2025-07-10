@@ -1,0 +1,47 @@
+[
+  {
+    "id": "backend-engineering",
+    "icon": "BE",
+    "title": "Backend Engineering",
+    "description": "Designing RESTful APIs, microservices architecture, and data processing pipelines. Experience with high-traffic systems, caching strategies, and database optimization.",
+    "technologies": [
+      "Java Spring Boot",
+      "Node.js",
+      "Express",
+      "PostgreSQL",
+      "MongoDB",
+      "Redis",
+      "AWS",
+      "Docker"
+    ]
+  },
+  {
+    "id": "system-architecture",
+    "icon": "SA",
+    "title": "System Architecture",
+    "description": "Architecting distributed systems for scalability and reliability. Focus on event-driven architecture, load balancing, and fault tolerance patterns.",
+    "technologies": [
+      "Microservices",
+      "Event-Driven Architecture",
+      "Docker",
+      "Kubernetes",
+      "CI/CD",
+      "Load Balancing"
+    ]
+  },
+  {
+    "id": "ai-vision-computing",
+    "icon": "AI",
+    "title": "AI Vision Computing",
+    "description": "Implementing computer vision solutions using YOLO object detection, developing data annotation workflows, and training custom models. Integrating AI capabilities into production systems.",
+    "technologies": [
+      "YOLO v5/v8",
+      "OpenCV",
+      "TensorFlow",
+      "Data Annotation",
+      "Model Training",
+      "Python",
+      "Computer Vision APIs"
+    ]
+  }
+]

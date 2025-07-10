@@ -1,0 +1,101 @@
+{
+  "employmentConfig": {
+    "employmentTypes": {
+      "Full-time": {
+        "label": "Full-time",
+        "color": "text-emerald-600"
+      },
+      "Contract": {
+        "label": "Contract", 
+        "color": "text-blue-600"
+      },
+      "Part-time": {
+        "label": "Part-time",
+        "color": "text-purple-600"
+      },
+      "Freelance": {
+        "label": "Freelance",
+        "color": "text-rose-600"
+      },
+      "leadership": {
+        "label": "Leadership",
+        "color": "text-amber-600"
+      }
+    },
+    "borderColors": {
+      "current": "border-gray-900",
+      "recent": "border-gray-300", 
+      "early": "border-gray-200"
+    }
+  },
+  "experiences": [
+    {
+      "id": "current",
+      "title": "Student Government President",
+      "company": "Cakrawala University",
+      "location": "Jakarta",
+      "startDate": "Nov 2024",
+      "endDate": "Present",
+      "type": "leadership",
+      "description": "Leading 200+ student initiatives while pursuing Data Science degree. Actively working on computer vision projects using YOLO models, data annotation pipelines, and AI model training for practical applications.",
+      "borderStyle": "current",
+      "isCurrent": true
+    },
+    {
+      "id": "etirta",
+      "title": "Software Engineer",
+      "company": "PT E-Tirta Medical Centre",
+      "location": "Jakarta",
+      "startDate": "Apr 2024",
+      "endDate": "Jul 2024",
+      "type": "Contract",
+      "description": "Contract role developing backend services serving 10K+ users daily for healthcare applications. Implemented secure APIs, optimized database queries, and ensured 99.9% system uptime in production.",
+      "borderStyle": "recent"
+    },
+    {
+      "id": "nf-senior",
+      "title": "Senior Backend Developer",
+      "company": "NF Juara",
+      "location": "Indonesia",
+      "startDate": "Mar 2023",
+      "endDate": "Mar 2024",
+      "type": "Full-time",
+      "description": "Led backend development for 3 major products serving 50K+ active users. Architected microservices infrastructure, reduced system latency by 40%, and mentored 5 junior developers in Java Spring and system design.",
+      "borderStyle": "recent"
+    },
+    {
+      "id": "early-career",
+      "title": "Early Career Progression",
+      "period": "2019-2023",
+      "description": "Diverse experience across full-time, contract, and freelance roles. Built production systems while gaining expertise in different tech stacks and business domains.",
+      "borderStyle": "early",
+      "isConsolidated": true,
+      "positions": [
+        {
+          "title": "Backend Developer",
+          "company": "NF Juara",
+          "type": "Full-time",
+          "period": "2021-2023"
+        },
+        {
+          "title": "Backend Mentor",
+          "company": "QarirLabs",
+          "type": "Part-time",
+          "period": "2022"
+        },
+        {
+          "title": "Software Engineer",
+          "company": "Badr Interactive",
+          "type": "Freelance",
+          "period": "2021-2022"
+        },
+        {
+          "title": "Backend Developer",
+          "company": "Skydu Academy",
+          "type": "Contract",
+          "period": "2019-2021"
+        }
+      ]
+    }
+  ]
+}
