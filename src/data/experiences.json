@@ -37,7 +37,7 @@
       "startDate": "Nov 2024",
       "endDate": "Present",
       "type": "leadership",
-      "description": "Leading 200+ student initiatives while pursuing Data Science degree. Actively working on computer vision projects using YOLO models, data annotation pipelines, and AI model training for practical applications.",
+      "description": "Leading student government initiatives while pursuing Data Science degree. Currently involved in computer vision projects and AI model development in a professional capacity (details confidential).",
       "borderStyle": "current",
       "isCurrent": true
     },
@@ -49,7 +49,7 @@
       "startDate": "Apr 2024",
       "endDate": "Jul 2024",
       "type": "Contract",
-      "description": "Contract role developing backend services serving 10K+ users daily for healthcare applications. Implemented secure APIs, optimized database queries, and ensured 99.9% system uptime in production.",
+      "description": "Contract software engineer role developing backend services for healthcare applications. Worked on API development and database optimization tasks.",
       "borderStyle": "recent"
     },
     {
@@ -57,43 +57,40 @@
       "title": "Senior Backend Developer",
       "company": "NF Juara",
       "location": "Indonesia",
-      "startDate": "Mar 2023",
-      "endDate": "Mar 2024",
+      "startDate": "Jul 2021",
+      "endDate": "Current",
       "type": "Full-time",
-      "description": "Led backend development for 3 major products serving 50K+ active users. Architected microservices infrastructure, reduced system latency by 40%, and mentored 5 junior developers in Java Spring and system design.",
+      "description": "Collaborated with 8-person engineering team for maintenance and development of new features for NF Juara users. Analyzed and optimized inefficient processes through code refactoring and database query optimization, consistently achieving 3-7x performance improvements.",
       "borderStyle": "recent"
     },
     {
       "id": "early-career",
       "title": "Early Career Progression",
-      "period": "2019-2023",
-      "description": "Diverse experience across full-time, contract, and freelance roles. Built production systems while gaining expertise in different tech stacks and business domains.",
+      "period": "2019-2022",
+      "description": "Gained experience across different roles and tech stacks, working on various backend development projects.",
       "borderStyle": "early",
       "isConsolidated": true,
       "positions": [
         {
-          "title": "Backend Developer",
-          "company": "NF Juara",
-          "type": "Full-time",
-          "period": "2021-2023"
-        },
-        {
-          "title": "Backend Mentor",
+          "title": "Freelance Mentor & Instructor",
           "company": "QarirLabs",
           "type": "Part-time",
-          "period": "2022"
+          "period": "Jan 2022 - Jun 2022",
+          "description": "Collaborated with instructors to create full-stack developer bootcamp curriculum. Provided learning materials and guided students from learning phase to final projects."
         },
         {
-          "title": "Software Engineer",
+          "title": "Freelance Backend Developer",
           "company": "Badr Interactive",
           "type": "Freelance",
-          "period": "2021-2022"
+          "period": "Aug 2020 - Feb 2022",
+          "description": "Involved in CMS application development for PT. SOHO Global Health, warehouse management for PT. FKS Multi Agro, and e-learning management system for UKM INDONESIA."
         },
         {
           "title": "Backend Developer",
           "company": "Skydu Academy",
-          "type": "Contract",
-          "period": "2019-2021"
+          "type": "Full-time",
+          "period": "Aug 2019 - Feb 2021",
+          "description": "Collaborated with 9-person engineering team for maintenance and development of new features for Skydu users."
         }
       ]
     }
