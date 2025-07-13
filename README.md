@@ -4,7 +4,7 @@
 
 Modern, responsive portfolio website showcasing backend engineering expertise, DevOps capabilities, system design skills, and AI vision computing projects.
 
-🔗 **Live Site**: [https://sayyid.github.io/](https://sayyid.github.io/)
+🔗 **Live Site**: [https://sayyid-haidar.github.io/](https://sayyid-haidar.github.io/)
 
 ## 👨‍💻 About This Portfolio
 
@@ -103,7 +103,7 @@ This portfolio uses a **data-driven architecture** where all content is stored i
 
 ```bash
 git clone https://github.com/sayyid-haidar/sayyid.github.io.git
-cd sayyid.github.io
+cd sayyid-haidar.github.io
 ```
 
 2. **Install dependencies**:
@@ -135,19 +135,30 @@ git push origin main
 
 ## 🚀 Deployment & Hosting
 
-This portfolio is hosted on **GitHub Pages** using the repository name `sayyid.github.io` for automatic custom domain setup.
+This portfolio is hosted on **GitHub Pages** using the repository name `sayyid-haidar.github.io` for automatic custom domain setup.
 
 ### GitHub Pages Configuration
 
 - **Repository**: `sayyid-haidar/sayyid.github.io`
-- **Live URL**: [https://sayyid.github.io/](https://sayyid.github.io/)
+- **Live URL**: [https://sayyid-haidar.github.io/](https://sayyid-haidar.github.io/)
 - **Auto-deploy**: Triggered on every push to `main` branch
 - **Build**: GitHub Actions handles build and deployment automatically
 
 ### Deployment Process
 
 1. **Push to main branch**: Any commit triggers deployment
-2. **GitHub Actions**: Runs build process with Vite
+2. **GitHub Actions**: Runs build process with Vite and Node.js 20
+3. **Linting**: Optional code quality check (continues on error)
+4. **Build Artifacts**: Uploads built files to GitHub Pages
+5. **Deploy**: Built files published to GitHub Pages
+6. **Live**: Changes appear on the live site within 2-5 minutes
+
+### Setup Instructions for GitHub Pages
+
+1. **Repository Name**: Must be named `sayyid-haidar.github.io` for user pages
+2. **Branch**: Deploy from `main` branch
+3. **Source**: GitHub Actions (not legacy Pages build)
+4. **Permissions**: Repository settings → Pages → Source: "GitHub Actions"
 3. **Deploy**: Built files published to GitHub Pages
 4. **Live**: Changes appear on the live site within minutes
 
