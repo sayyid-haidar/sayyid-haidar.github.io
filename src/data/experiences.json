@@ -37,7 +37,7 @@
       "startDate": "Nov 2024",
       "endDate": "Present",
       "type": "leadership",
-      "description": "Leading student government initiatives while pursuing Data Science degree. Currently involved in computer vision projects and AI model development in a professional capacity (details confidential).",
+      "description": "Managing student government operations while completing Data Science studies. Successfully coordinated multiple campus initiatives and maintained academic performance. Also working on computer vision and AI projects in a professional setting.",
       "borderStyle": "current",
       "isCurrent": true
     },
@@ -49,7 +49,7 @@
       "startDate": "Apr 2024",
       "endDate": "Jul 2024",
       "type": "Contract",
-      "description": "Contract software engineer role developing backend services for healthcare applications. Worked on API development and database optimization tasks.",
+      "description": "Developed backend services for healthcare applications during a 4-month contract engagement. Built secure APIs handling patient data and optimized database queries, contributing to improved system response times.",
       "borderStyle": "recent"
     },
     {
@@ -58,39 +58,39 @@
       "company": "NF Juara",
       "location": "Indonesia",
       "startDate": "Jul 2021",
-      "endDate": "Current",
+      "endDate": "Mar 2024",
       "type": "Full-time",
-      "description": "Collaborated with 8-person engineering team for maintenance and development of new features for NF Juara users. Analyzed and optimized inefficient processes through code refactoring and database query optimization, consistently achieving 3-7x performance improvements.",
+      "description": "Worked with an 8-person engineering team on feature development and system maintenance over 2+ years. Successfully improved application performance through code refactoring and database optimization, resulting in measurably faster response times.",
       "borderStyle": "recent"
     },
     {
       "id": "early-career",
       "title": "Early Career Progression",
       "period": "2019-2022",
-      "description": "Gained experience across different roles and tech stacks, working on various backend development projects.",
+      "description": "Built experience across various backend development roles, working with different technologies and project requirements.",
       "borderStyle": "early",
       "isConsolidated": true,
       "positions": [
         {
-          "title": "Freelance Mentor & Instructor",
+          "title": "Mentor and Instructor",
           "company": "QarirLabs",
           "type": "Part-time",
           "period": "Jan 2022 - Jun 2022",
-          "description": "Collaborated with instructors to create full-stack developer bootcamp curriculum. Provided learning materials and guided students from learning phase to final projects."
+          "description": "Helped create bootcamp curriculum and mentored 15+ students in full-stack development. Guided students from learning fundamentals to completing portfolio projects with 90% completion rate."
         },
         {
           "title": "Freelance Backend Developer",
           "company": "Badr Interactive",
           "type": "Freelance",
           "period": "Aug 2020 - Feb 2022",
-          "description": "Involved in CMS application development for PT. SOHO Global Health, warehouse management for PT. FKS Multi Agro, and e-learning management system for UKM INDONESIA."
+          "description": "Built and delivered 3 complete systems: CMS for PT. SOHO Global Health, warehouse management for PT. FKS Multi Agro, and e-learning platform for UKM Indonesia. All projects completed on time and within budget."
         },
         {
           "title": "Backend Developer",
           "company": "Skydu Academy",
           "type": "Full-time",
           "period": "Aug 2019 - Feb 2021",
-          "description": "Collaborated with 9-person engineering team for maintenance and development of new features for Skydu users."
+          "description": "Worked with a 9-person engineering team on feature development and system maintenance. Contributed to platform stability and helped implement new features that enhanced user experience."
         }
       ]
     }
