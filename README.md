@@ -1,190 +1,118 @@
-# Sayyid Haidar - Portfolio Website
+# Sayyid Haidar - Portfolio
 
-[![Deploy to GitHub Pages](https://github.com/sayyid-haidar/sayyid.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/sayyid-haidar/sayyid.github.io/actions/workflows/deploy.yml)
+[![Deploy](https://github.com/sayyid-haidar/sayyid.github.io/actions/workflows/deploy.yml/badge.svg)](https://sayyid-haidar.github.io/)
 
-Modern, responsive portfolio website showcasing backend engineering expertise, DevOps capabilities, system design skills, and AI vision computing projects.
+Modern portfolio dengan React + TypeScript + Tailwind.
 
-🔗 **Live Site**: [https://sayyid-haidar.github.io/](https://sayyid-haidar.github.io/)
-
-## 👨‍💻 About This Portfolio
-
-This is the personal portfolio of **Sayyid Haidar**, a backend engineer specializing in:
-
-- **Backend Development** with Java Spring, Node.js, and microservices architecture
-- **DevOps & Infrastructure** with containerization and CI/CD pipelines  
-- **System Design** for scalable applications
-- **AI Vision Computing** with YOLO models and computer vision projects
-
-## ✨ Key Features
-
-- 🎨 **Clean, Professional Design** - Minimalist layout focused on content
-- 📱 **Fully Responsive** - Optimized for desktop, tablet, and mobile
-- ⚡ **High Performance** - Fast loading with optimized bundle (~60KB gzipped)
-- 🔍 **SEO Optimized** - Structured data and meta tags for search engines
-- 📊 **JSON-Driven Content** - Easy maintenance without touching React code
-- 🚀 **Auto Deployment** - GitHub Actions for seamless updates
-- ♿ **Accessible Design** - Following WCAG guidelines
-
-## 🛠️ Technology Stack
-
-### Frontend
-- **React 18** with TypeScript for type-safe development
-- **Vite** as the build tool for fast development and optimized builds
-- **Tailwind CSS** for utility-first styling and responsive design
-- **Lucide React** for consistent iconography
-
-### Content Management
-- **JSON-based data structure** for easy content updates
-- **TypeScript interfaces** for data validation
-- **Centralized configuration** for employment types and styling
-
-### Deployment & DevOps
-- **GitHub Pages** hosting with custom domain support
-- **GitHub Actions** for automated CI/CD pipeline
-- **Automated deployment** on every push to main branch
-- **Build optimization** with asset compression and tree-shaking
-
-### Performance & SEO
-- **Bundle size optimization** (~19KB CSS, ~185KB JS gzipped)
-- **Code splitting** with vendor and icon chunks
-- **SEO meta tags** with structured data
-- **Responsive images** and lazy loading
-
-## 📁 Project Structure
-
-```bash
-src/
-├── components/           # React components
-├── data/                # JSON content files
-│   ├── hero.json        # Hero section data
-│   ├── profile.json     # Profile data (stats, contact, nav)
-│   ├── what-i-do.json   # Skills & services data
-│   └── experiences.json # Work experience & employment config
-├── App.tsx              # Main application component
-└── main.tsx             # Application entry point
-
-public/
-├── assets/              # Static assets
-│   ├── sayyid-haidar-profile.jpg    # Profile photo
-│   └── Sayyid-Haidar-Resume.pdf     # Resume/CV file
-└── index.html           # HTML template with SEO meta tags
-```
-
-## 📊 JSON-Driven Content Management
-
-This portfolio uses a **data-driven architecture** where all content is stored in JSON files, making it easy to maintain without touching React code.
-
-### Core Data Files
-
-| File | Purpose | Contains |
-|------|---------|----------|
-| `hero.json` | Hero section | Name, title, description, current status |
-| `profile.json` | Profile data | Stats, social links, contact info, navigation |
-| `what-i-do.json` | Skills/Services | Technical expertise with descriptions and technologies |
-| `experiences.json` | Work history | Professional timeline + employment type configuration |
-
-### Key Benefits
-
-- ✅ **Easy Updates**: Modify content without touching React code
-- ✅ **Maintainable**: Centralized data management
-- ✅ **Scalable**: Easy to add new sections or modify existing ones
-- ✅ **Type-safe**: JSON structure validated by TypeScript
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Node.js (v18 or higher)
-- npm or yarn package manager
-
-### Installation
-
-1. **Clone the repository**:
-
-```bash
-git clone https://github.com/sayyid-haidar/sayyid.github.io.git
-cd sayyid-haidar.github.io
-```
-
-2. **Install dependencies**:
+## 🚀 Quick Start
 
 ```bash
 npm install
+npm run dev      # http://localhost:5173
+npm run build    # Output: dist/
 ```
 
-3. **Start development server**:
+## 🛠 Stack
 
-```bash
-npm run dev
+- **React 19** + TypeScript
+- **Vite** (build + HMR)
+- **Tailwind CSS**
+- **GitHub Pages** (auto deploy)
+
+## ✨ Features
+
+| Feature | Deskripsi |
+|---------|-----------|
+| 🌙 Dark Mode | Toggle + system preference |
+| 📱 Responsive | Mobile menu + breakpoints |
+| ⚡ Code Split | Lazy-loaded sections |
+| 📊 JSON Data | Edit konten tanpa coding |
+| 🔍 SEO Ready | Meta tags + structured data |
+
+## 📁 Edit Konten
+
+Semua data di `src/data/` (JSON):
+
+| File | Isi | Auto-hide? |
+|------|-----|------------|
+| `hero.json` | Nama, title, deskripsi | ❌ |
+| `profile.json` | Nav, stats, kontak | ❌ |
+| `what-i-do.json` | Skills | ❌ |
+| `projects.json` | Projects showcase | ✅ |
+| `experiences.json` | Work history | ✅ |
+
+**Contoh tambah project:**
+
+```json
+// src/data/projects.json
+{
+  "id": "nama-project",
+  "title": "Judul",
+  "description": "Deskripsi singkat",
+  "thumbnail": "/assets/projects/gambar.jpg",
+  "tags": ["React", "Node"],
+  "category": "Full Stack",
+  "links": { "github": "...", "demo": "..." },
+  "featured": true
+}
 ```
 
-4. **Open in browser**: Visit `http://localhost:5173`
+Section otomatis hide kalau array kosong.
 
-### Build & Deployment
+## 🎨 Customisasi
 
+### Warna / Theme
+Tailwind `dark:` classes:
+```tsx
+className="bg-white dark:bg-gray-900"
+```
+
+### Tambah Section Baru
+1. Buat file di `src/components/sections/`
+2. Export default + lazy load di `App.tsx`
+3. Tambah nav di `src/data/profile.json`
+
+## 📱 Struktur Folder
+
+```
+src/
+├── components/
+│   ├── layout/      # Navbar, Footer
+│   ├── sections/    # Hero, Projects, dsb
+│   └── ui/          # Button, Card, Skeleton
+├── hooks/           # useTheme, useMediaQuery
+├── data/            # JSON konten
+└── types/           # TypeScript interfaces
+
+public/
+├── assets/          # Foto, CV, thumbnails
+└── data/            # JSON untuk production
+```
+
+## 🔧 Troubleshooting
+
+| Problem | Solusi |
+|---------|--------|
+| Perubahan JSON ga muncul | Hard refresh (Cmd+Shift+R) |
+| Gambar project ga load | Pastikan di `public/assets/projects/` |
+| Section ga muncul | Cek array JSON kosong atau tidak |
+
+## 📝 Deploy
+
+Push ke `main` → GitHub Actions auto deploy.
+
+**Manual:**
 ```bash
-# Build for production
 npm run build
-
-# Preview production build
-npm run preview
-
-# Deploy (automatic via GitHub Actions)
-git push origin main
-```
-
-## 🚀 Deployment & Hosting
-
-This portfolio is hosted on **GitHub Pages** using the repository name `sayyid-haidar.github.io` for automatic custom domain setup.
-
-### GitHub Pages Configuration
-
-- **Repository**: `sayyid-haidar/sayyid.github.io`
-- **Live URL**: [https://sayyid-haidar.github.io/](https://sayyid-haidar.github.io/)
-- **Auto-deploy**: Triggered on every push to `main` branch
-- **Build**: GitHub Actions handles build and deployment automatically
-
-### Deployment Process
-
-1. **Push to main branch**: Any commit triggers deployment
-2. **GitHub Actions**: Runs build process with Vite and Node.js 20
-3. **Linting**: Optional code quality check (continues on error)
-4. **Build Artifacts**: Uploads built files to GitHub Pages
-5. **Deploy**: Built files published to GitHub Pages
-6. **Live**: Changes appear on the live site within 2-5 minutes
-
-### Setup Instructions for GitHub Pages
-
-1. **Repository Name**: Must be named `sayyid-haidar.github.io` for user pages
-2. **Branch**: Deploy from `main` branch
-3. **Source**: GitHub Actions (not legacy Pages build)
-4. **Permissions**: Repository settings → Pages → Source: "GitHub Actions"
-3. **Deploy**: Built files published to GitHub Pages
-4. **Live**: Changes appear on the live site within minutes
-
-### Manual Deployment
-
-```bash
-# Build for production
-npm run build
-
-# Preview build locally
-npm run preview
-
-# Deploy via scripts
-./deploy.sh
+# Upload dist/ ke GitHub Pages
 ```
 
 ## 📞 Contact
 
-- **Email**: [sayyid.abdul.aziz.haidar@gmail.com](mailto:sayyid.abdul.aziz.haidar@gmail.com)
-- **LinkedIn**: [sayyid-abdul-aziz-haidar](https://www.linkedin.com/in/sayyid-abdul-aziz-haidar-3a9230146/)
-- **GitHub**: [sayyid-haidar](https://github.com/sayyid-haidar)
-
-## 📝 License
-
-This project is open source and available under the [MIT License](LICENSE).
+- Email: sayyid.abdul.aziz.haidar@gmail.com
+- LinkedIn: [sayyid-abdul-aziz-haidar](https://linkedin.com/in/sayyid-abdul-aziz-haidar-3a9230146/)
+- GitHub: [@sayyid-haidar](https://github.com/sayyid-haidar)
 
 ---
 
-**Built with ❤️ by Sayyid Haidar** | Backend Engineer specializing in AI Vision Computing
+MIT License © Sayyid Haidar
