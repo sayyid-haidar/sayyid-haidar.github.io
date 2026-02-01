@@ -1,0 +1,53 @@
+[
+  {
+    "id": "yolo-vision-api",
+    "title": "YOLO Vision API",
+    "description": "RESTful API for real-time object detection using YOLOv8. Supports multiple model sizes, custom trained models, and batch processing with async queue.",
+    "thumbnail": "/assets/projects/yolo-vision-api.jpg",
+    "tags": ["Python", "FastAPI", "YOLOv8", "Docker", "Redis"],
+    "category": "AI/ML",
+    "links": {
+      "github": "https://github.com/sayyid-haidar/yolo-vision-api",
+      "demo": "https://vision-api-demo.sayyid.dev",
+      "docs": "https://docs.vision-api.sayyid.dev"
+    },
+    "featured": true,
+    "stats": {
+      "stars": 45,
+      "forks": 12
+    }
+  },
+  {
+    "id": "microservices-platform",
+    "title": "Microservices Platform",
+    "description": "Scalable e-commerce backend built with microservices architecture. Features include service discovery, distributed tracing, and auto-scaling with Kubernetes.",
+    "thumbnail": "/assets/projects/microservices-platform.jpg",
+    "tags": ["Java", "Spring Boot", "Kubernetes", "PostgreSQL", "Kafka"],
+    "category": "Backend",
+    "links": {
+      "github": "https://github.com/sayyid-haidar/microservices-platform"
+    },
+    "featured": true,
+    "stats": {
+      "stars": 128,
+      "forks": 34
+    }
+  },
+  {
+    "id": "realtime-chat",
+    "title": "Real-time Chat System",
+    "description": "WebSocket-based chat application with end-to-end encryption. Supports group chats, file sharing, and message persistence with read receipts.",
+    "thumbnail": "/assets/projects/realtime-chat.jpg",
+    "tags": ["Node.js", "Socket.io", "MongoDB", "Redis", "React"],
+    "category": "Full Stack",
+    "links": {
+      "github": "https://github.com/sayyid-haidar/realtime-chat",
+      "demo": "https://chat-demo.sayyid.dev"
+    },
+    "featured": true,
+    "stats": {
+      "stars": 89,
+      "forks": 23
+    }
+  }
+]

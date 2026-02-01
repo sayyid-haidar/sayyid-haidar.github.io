@@ -21,7 +21,7 @@ const skillCategories: SkillCategory[] = [
   {
     title: 'DevOps & Infrastructure',
     icon: <Settings className="w-6 h-6" />,
-    skills: ['Docker', 'AWS', 'CI/CD', 'System Architecture', 'Performance Optimization', 'Monitoring']
+    skills: ['Docker', 'Linux', 'CI/CD', 'System Architecture', 'Performance Optimization', 'Monitoring']
   },
   {
     title: 'Data Science & Analytics',

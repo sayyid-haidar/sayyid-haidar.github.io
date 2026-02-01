@@ -31,26 +31,15 @@
   "experiences": [
     {
       "id": "current",
-      "title": "Lead Software Engineer",
-      "company": "Nauchara",
-      "location": "Jakarta",
-      "startDate": "Agu 2025",
-      "endDate": "Present",
-      "type": "Full-time",
-      "description": "Leading a team of 3 engineers to build a computer vision product. Overseeing architecture design, code reviews, and deployment processes to ensure high availability and performance.",
-      "borderStyle": "current",
-      "isCurrent": true
-    },
-    {
-      "id": "sga-president",
       "title": "Student Government President",
       "company": "Cakrawala University",
       "location": "Jakarta",
       "startDate": "Nov 2024",
-      "endDate": "Feb 2026",
+      "endDate": "Present",
       "type": "leadership",
       "description": "Managing student government operations while completing Data Science studies. Successfully coordinated multiple campus initiatives and maintained academic performance. Also working on computer vision and AI projects in a professional setting.",
-      "borderStyle": "recent"
+      "borderStyle": "current",
+      "isCurrent": true
     },
     {
       "id": "etirta",

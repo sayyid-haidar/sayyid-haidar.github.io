@@ -65,7 +65,7 @@ const experiences: Experience[] = [
       'Optimized database performance and API response times',
       'Collaborated with international teams on production systems'
     ],
-    technologies: ['Node.js', 'Java Spring', 'PostgreSQL', 'Redis', 'Docker', 'AWS'],
+    technologies: ['Node.js', 'Java Spring', 'PostgreSQL', 'Redis', 'Docker', 'Linux'],
     type: 'work'
   },
   {
