@@ -21,13 +21,15 @@ describe('application routes', () => {
     ['/projects', 'Useful systems, thoughtfully built.'],
     ['/cheatsheets', 'Cheatsheets'],
     ['/writing', 'Writing'],
-  ])('renders %s', (route, heading) => {
+  ])('renders %s', async (route, heading) => {
     renderRoute(route)
-    expect(screen.getByRole('heading', { name: heading })).toBeInTheDocument()
+    expect(await screen.findByRole('heading', { name: heading })).toBeInTheDocument()
   })
 
-  it('renders not found for an unknown route', () => {
+  it('renders not found for an unknown route', async () => {
     renderRoute('/missing')
-    expect(screen.getByRole('heading', { name: /does not exist/i })).toBeInTheDocument()
+    expect(
+      await screen.findByRole('heading', { name: /does not exist/i }),
+    ).toBeInTheDocument()
   })
 })
