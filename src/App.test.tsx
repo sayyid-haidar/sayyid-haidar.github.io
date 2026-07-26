@@ -14,11 +14,11 @@ function renderRoute(route: string) {
 describe('application routes', () => {
   it('renders the homepage', () => {
     renderRoute('/')
-    expect(screen.getByRole('heading', { name: /portfolio redesign/i })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /I build useful systems/i })).toBeInTheDocument()
   })
 
   it.each([
-    ['/projects', 'Selected work'],
+    ['/projects', 'Useful systems, thoughtfully built.'],
     ['/cheatsheets', 'Cheatsheets'],
     ['/writing', 'Writing'],
   ])('renders %s', (route, heading) => {

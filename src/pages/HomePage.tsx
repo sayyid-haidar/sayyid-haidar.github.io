@@ -1,7 +1,19 @@
-import { Container } from '../components/layout/Container'
+import { ContactSection } from '../components/sections/ContactSection'
+import { HeroSection } from '../components/sections/HeroSection'
+import { LatestKnowledgeSection } from '../components/sections/LatestKnowledgeSection'
+import { SelectedWorkSection } from '../components/sections/SelectedWorkSection'
+import {
+  getPublishedCheatsheets,
+  getPublishedProjects,
+  getPublishedWriting,
+} from '../content/registry'
 import { usePageMetadata } from '../lib/usePageMetadata'
 
 export function HomePage() {
+  const projects = getPublishedProjects()
+  const cheatsheets = getPublishedCheatsheets()
+  const writing = getPublishedWriting()
+
   usePageMetadata(
     'Sayyid Haidar — Backend Engineer, Builder, Writer',
     'Selected software projects, practical cheatsheets, and engineering writing.',
@@ -9,18 +21,10 @@ export function HomePage() {
 
   return (
     <>
-      <section className="py-28">
-        <Container size="xl">
-          <h1 className="text-5xl font-semibold tracking-tight">Portfolio redesign in progress.</h1>
-        </Container>
-      </section>
-      <section id="contact" className="py-28">
-        <Container size="lg">
-          <a href="mailto:sayyid.abdul.aziz.haidar@gmail.com">
-            sayyid.abdul.aziz.haidar@gmail.com
-          </a>
-        </Container>
-      </section>
+      <HeroSection />
+      <SelectedWorkSection projects={projects} />
+      <LatestKnowledgeSection cheatsheets={cheatsheets} writing={writing} />
+      <ContactSection />
     </>
   )
 }
