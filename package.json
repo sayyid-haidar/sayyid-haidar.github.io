@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run validate:content && tsc -b && vite build",
+    "build": "npm run validate:content && tsc -b && vite build && node scripts/create-spa-fallback.mjs",
     "lint": "eslint .",
     "test": "vitest run",
     "test:watch": "vitest",

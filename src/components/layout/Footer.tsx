@@ -1,28 +1,31 @@
-import React from 'react';
-import { Container } from './Container';
+import { Container } from './Container'
 
-interface FooterProps {
-  name: string;
-  title: string;
-  subtitle: string;
-}
-
-export const Footer: React.FC<FooterProps> = ({
-  name,
-  title,
-  subtitle,
-}) => {
-  const currentYear = new Date().getFullYear();
-
+export function Footer() {
   return (
-    <footer className="py-8 bg-gray-900 dark:bg-black border-t border-gray-800 dark:border-gray-800 transition-colors duration-200">
-      <Container>
-        <div className="text-center text-gray-400 dark:text-gray-500 transition-colors">
-          <p>
-            © {currentYear} {name} • {title} {subtitle}
-          </p>
+    <footer className="border-t border-line bg-white py-8">
+      <Container size="xl">
+        <div className="flex flex-col gap-4 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
+          <span>© {new Date().getFullYear()} Sayyid Haidar</span>
+          <div className="flex gap-5">
+            <a
+              href="https://github.com/sayyid-haidar"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-ink"
+            >
+              GitHub
+            </a>
+            <a
+              href="https://www.linkedin.com/in/sayyid-abdul-aziz-haidar-3a9230146/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-ink"
+            >
+              LinkedIn
+            </a>
+          </div>
         </div>
       </Container>
     </footer>
-  );
-};
+  )
+}

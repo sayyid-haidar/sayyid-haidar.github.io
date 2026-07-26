@@ -1,107 +1,68 @@
-import React, { useState } from 'react';
-import { Container } from './Container';
-import { MobileNav } from './MobileNav';
-import { HamburgerButton } from '../ui/HamburgerButton';
-import { ThemeToggle, SimpleThemeToggle } from '../ui/ThemeToggle';
-import type { NavigationItem } from '../../types';
-import type { Theme } from '../../hooks/useTheme';
+import { useState } from 'react'
+import { Link, NavLink } from 'react-router-dom'
+import { Menu } from 'lucide-react'
+import { Container } from './Container'
+import { MobileNav } from './MobileNav'
 
-interface NavbarProps {
-  name: string;
-  navigation: NavigationItem[];
-  resumePath: string;
-  theme: Theme;
-  setTheme: (theme: Theme) => void;
-  toggleTheme: () => void;
-  resolvedTheme: 'light' | 'dark';
-  // Data availability flags
-  hasProjects?: boolean;
-  hasExperience?: boolean;
-}
+const links = [
+  { label: 'Work', to: '/projects' },
+  { label: 'Cheatsheets', to: '/cheatsheets' },
+  { label: 'Writing', to: '/writing' },
+]
 
-export const Navbar: React.FC<NavbarProps> = ({
-  name,
-  navigation,
-  resumePath,
-  theme,
-  setTheme,
-  toggleTheme,
-  resolvedTheme,
-  hasProjects = true,
-  hasExperience = true,
-}) => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  // Filter navigation based on data availability
-  const filteredNavigation = navigation.filter((item) => {
-    if (item.href === '#projects' && !hasProjects) return false;
-    if (item.href === '#experience' && !hasExperience) return false;
-    return true;
-  });
+export function Navbar() {
+  const [open, setOpen] = useState(false)
 
   return (
     <>
-      <nav className="fixed top-0 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-100 dark:border-gray-800 z-40 transition-colors duration-200">
-        <Container>
-          <div className="flex justify-between items-center py-4">
-            {/* Logo/Name */}
-            <a href="#" className="font-bold text-xl text-gray-900 dark:text-white hover:text-gray-700 dark:hover:text-gray-200 transition-colors">
-              {name}
-            </a>
+      <a
+        href="#main-content"
+        className="fixed left-4 top-3 z-[60] -translate-y-20 rounded-md bg-ink px-4 py-2 text-sm text-white focus:translate-y-0"
+      >
+        Skip to content
+      </a>
+      <header className="sticky top-0 z-50 border-b border-line/80 bg-white/90 backdrop-blur-xl">
+        <Container size="xl">
+          <nav className="flex h-[72px] items-center justify-between" aria-label="Primary">
+            <Link to="/" className="text-[15px] font-semibold tracking-[-0.035em] text-ink">
+              Sayyid Haidar
+            </Link>
 
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
-              {filteredNavigation.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors relative group"
+            <div className="hidden items-center gap-8 md:flex">
+              {links.map((link) => (
+                <NavLink
+                  key={link.to}
+                  to={link.to}
+                  className={({ isActive }) =>
+                    `text-sm transition-colors ${
+                      isActive ? 'text-ink' : 'text-muted hover:text-ink'
+                    }`
+                  }
                 >
-                  {item.name}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gray-900 dark:bg-white transition-all duration-300 group-hover:w-full" />
-                </a>
+                  {link.label}
+                </NavLink>
               ))}
-            </div>
-
-            {/* Desktop Actions */}
-            <div className="hidden md:flex items-center gap-4">
-              <ThemeToggle
-                theme={theme}
-                setTheme={setTheme}
-                resolvedTheme={resolvedTheme}
-              />
-              <a
-                href={resumePath}
-                download
-                className="btn-primary text-sm"
+              <Link
+                to="/#contact"
+                className="rounded-full bg-ink px-4 py-2 text-sm font-medium text-white transition-transform hover:-translate-y-0.5"
               >
-                Download CV
-              </a>
+                Contact
+              </Link>
             </div>
 
-            {/* Mobile Actions */}
-            <div className="flex items-center gap-2 md:hidden">
-              <SimpleThemeToggle
-                toggleTheme={toggleTheme}
-                resolvedTheme={resolvedTheme}
-              />
-              <HamburgerButton
-                isOpen={isMobileMenuOpen}
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              />
-            </div>
-          </div>
+            <button
+              type="button"
+              aria-label="Open menu"
+              aria-expanded={open}
+              onClick={() => setOpen(true)}
+              className="rounded-lg p-2 text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent md:hidden"
+            >
+              <Menu size={22} />
+            </button>
+          </nav>
         </Container>
-      </nav>
-
-      {/* Mobile Navigation Drawer */}
-      <MobileNav
-        isOpen={isMobileMenuOpen}
-        onClose={() => setIsMobileMenuOpen(false)}
-        navigation={filteredNavigation}
-        resumePath={resumePath}
-        resolvedTheme={resolvedTheme}
-      />
+      </header>
+      <MobileNav open={open} onClose={() => setOpen(false)} links={links} />
     </>
-  );
-};
+  )
+}
