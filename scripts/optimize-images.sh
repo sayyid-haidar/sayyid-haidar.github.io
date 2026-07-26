@@ -68,5 +68,4 @@ echo ""
 echo -e "${GREEN}Optimization complete!${NC}"
 echo "Optimized images are in: $OUTPUT_DIR"
 echo ""
-echo "To use optimized images, update your image paths or use the Picture component:"
-echo '  <Picture src="image" alt="Description" />'
+echo "To use optimized images, update the relevant image paths in the app."

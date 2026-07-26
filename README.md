@@ -1,118 +1,119 @@
-# Sayyid Haidar - Portfolio
+# Sayyid Haidar — Portfolio & Knowledge Studio
 
-[![Deploy](https://github.com/sayyid-haidar/sayyid.github.io/actions/workflows/deploy.yml/badge.svg)](https://sayyid-haidar.github.io/)
+A light, Markdown-driven personal site for selected software projects,
+cheatsheets, and long-form writing.
 
-Modern portfolio dengan React + TypeScript + Tailwind.
+## Stack
 
-## 🚀 Quick Start
+- React 19 and TypeScript
+- Vite
+- Tailwind CSS
+- React Router
+- Markdown with GFM and syntax highlighting
+- Vitest and Testing Library
+- GitHub Pages
+
+## Local development
 
 ```bash
 npm install
-npm run dev      # http://localhost:5173
-npm run build    # Output: dist/
+npm run dev
 ```
 
-## 🛠 Stack
+The development server runs at `http://localhost:3000`.
 
-- **React 19** + TypeScript
-- **Vite** (build + HMR)
-- **Tailwind CSS**
-- **GitHub Pages** (auto deploy)
+## Quality gates
 
-## ✨ Features
-
-| Feature | Deskripsi |
-|---------|-----------|
-| 🌙 Dark Mode | Toggle + system preference |
-| 📱 Responsive | Mobile menu + breakpoints |
-| ⚡ Code Split | Lazy-loaded sections |
-| 📊 JSON Data | Edit konten tanpa coding |
-| 🔍 SEO Ready | Meta tags + structured data |
-
-## 📁 Edit Konten
-
-Semua data di `src/data/` (JSON):
-
-| File | Isi | Auto-hide? |
-|------|-----|------------|
-| `hero.json` | Nama, title, deskripsi | ❌ |
-| `profile.json` | Nav, stats, kontak | ❌ |
-| `what-i-do.json` | Skills | ❌ |
-| `projects.json` | Projects showcase | ✅ |
-| `experiences.json` | Work history | ✅ |
-
-**Contoh tambah project:**
-
-```json
-// src/data/projects.json
-{
-  "id": "nama-project",
-  "title": "Judul",
-  "description": "Deskripsi singkat",
-  "thumbnail": "/assets/projects/gambar.jpg",
-  "tags": ["React", "Node"],
-  "category": "Full Stack",
-  "links": { "github": "...", "demo": "..." },
-  "featured": true
-}
-```
-
-Section otomatis hide kalau array kosong.
-
-## 🎨 Customisasi
-
-### Warna / Theme
-Tailwind `dark:` classes:
-```tsx
-className="bg-white dark:bg-gray-900"
-```
-
-### Tambah Section Baru
-1. Buat file di `src/components/sections/`
-2. Export default + lazy load di `App.tsx`
-3. Tambah nav di `src/data/profile.json`
-
-## 📱 Struktur Folder
-
-```
-src/
-├── components/
-│   ├── layout/      # Navbar, Footer
-│   ├── sections/    # Hero, Projects, dsb
-│   └── ui/          # Button, Card, Skeleton
-├── hooks/           # useTheme, useMediaQuery
-├── data/            # JSON konten
-└── types/           # TypeScript interfaces
-
-public/
-├── assets/          # Foto, CV, thumbnails
-└── data/            # JSON untuk production
-```
-
-## 🔧 Troubleshooting
-
-| Problem | Solusi |
-|---------|--------|
-| Perubahan JSON ga muncul | Hard refresh (Cmd+Shift+R) |
-| Gambar project ga load | Pastikan di `public/assets/projects/` |
-| Section ga muncul | Cek array JSON kosong atau tidak |
-
-## 📝 Deploy
-
-Push ke `main` → GitHub Actions auto deploy.
-
-**Manual:**
 ```bash
+npm run lint
+npm test
 npm run build
-# Upload dist/ ke GitHub Pages
 ```
 
-## 📞 Contact
+`npm run build` validates every Markdown file before creating `dist/` and the
+GitHub Pages `404.html` route fallback.
 
-- Email: sayyid.abdul.aziz.haidar@gmail.com
-- LinkedIn: [sayyid-abdul-aziz-haidar](https://linkedin.com/in/sayyid-abdul-aziz-haidar-3a9230146/)
-- GitHub: [@sayyid-haidar](https://github.com/sayyid-haidar)
+## Writing content
 
----
+Add Markdown files to:
+
+```text
+content/
+├── projects/
+├── cheatsheets/
+└── writing/
+```
+
+Filenames become URL slugs and must use lowercase kebab-case:
+
+```text
+postgresql-commands.md → /cheatsheets/postgresql-commands
+```
+
+New files remain private unless frontmatter explicitly contains:
+
+```yaml
+draft: false
+```
+
+See [content/README.md](content/README.md) and the draft templates in each
+content folder.
+
+## Shared frontmatter
+
+```yaml
+title: PostgreSQL commands I keep forgetting
+description: A compact reference for inspecting and debugging PostgreSQL.
+publishedAt: 2026-07-20
+language: en
+tags:
+  - database
+draft: false
+```
+
+Knowledge entries also require:
+
+```yaml
+topic: Database
+icon: "🐘"
+```
+
+Projects also require:
+
+```yaml
+year: 2026
+role: Backend and system design
+stack:
+  - Java
+  - PostgreSQL
+featured: true
+order: 1
+```
+
+Run the validator for file-specific metadata errors:
+
+```bash
+npm run validate:content
+```
+
+## Deployment
+
+The GitHub Actions workflow deploys a tagged version:
+
+```bash
+git tag v1.0.0
+git push origin v1.0.0
+```
+
+It can also deploy a chosen tag through manual workflow dispatch. A normal push
+to `main` does not deploy automatically.
+
+## Content policy
+
+- Publish only truthful project details.
+- Do not invent metrics or outcomes.
+- Generalize private client information while keeping engineering reasoning
+  concrete.
+- Draft templates never appear on the public site.
 
 MIT License © Sayyid Haidar
