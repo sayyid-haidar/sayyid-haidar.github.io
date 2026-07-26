@@ -93,8 +93,10 @@ The Notion Faces portrait itself remains unchanged. Motion is applied to its pre
 
 The approved portrait is the portrait encoded by
 `https://faces.notion.com/customize?face=s1e22y3b14n29m61h181`.
-Implementation will use the portrait-only download from that customization as a
-local optimized asset, not a screenshot of the Notion Faces interface.
+The owner has supplied its portrait-only download at
+`public/assets/sayyid-notion-face.png`. Implementation will optimize that local
+source asset for delivery and will not use a screenshot of the Notion Faces
+interface.
 
 Scroll reveals and hover feedback remain short and low-amplitude. When `prefers-reduced-motion: reduce` is active, all decorative motion is disabled and content remains fully visible.
 

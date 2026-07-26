@@ -280,19 +280,15 @@ style: establish light editorial design system
 - Create: `src/components/ui/NotionAvatar.tsx`
 - Create: `src/components/ui/KnowledgeRow.tsx`
 - Modify: `src/components/ui/ProjectCard.tsx`
-- Add: `public/assets/notion-avatar.png`
+- Use: `public/assets/sayyid-notion-face.png`
+- Add: optimized avatar derivative under `public/assets/`
 - Modify: `src/data/hero.json` or replace it with a smaller typed configuration
 - Modify: relevant tests
 
 **Steps**
 
-1. Download the portrait-only asset encoded by:
-
-   ```text
-   https://faces.notion.com/customize?face=s1e22y3b14n29m61h181
-   ```
-
-2. Optimize and store it locally as `public/assets/notion-avatar.png`. Do not use the brainstorming screenshot.
+1. Use the owner-supplied 2400 × 2400 transparent PNG at `public/assets/sayyid-notion-face.png`.
+2. Generate an optimized delivery derivative under `public/assets/` while preserving the supplied PNG as the source asset. Do not use the brainstorming screenshot.
 3. Build the hero with:
    - approved label;
    - concise build-and-document statement;
