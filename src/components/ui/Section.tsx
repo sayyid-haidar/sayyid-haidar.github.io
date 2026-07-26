@@ -1,69 +1,63 @@
-import React from 'react';
-import { cn } from '../../lib/cn';
+import type { ReactNode } from 'react'
+import { cn } from '../../lib/cn'
 
 interface SectionProps {
-  id?: string;
-  children: React.ReactNode;
-  className?: string;
-  background?: 'white' | 'gray' | 'dark';
-  padding?: 'sm' | 'md' | 'lg';
+  id?: string
+  children: ReactNode
+  className?: string
+  background?: 'white' | 'canvas' | 'ink' | 'gray' | 'dark'
+  padding?: 'sm' | 'md' | 'lg'
 }
 
-export const Section: React.FC<SectionProps> = ({
+export function Section({
   id,
   children,
   className,
   background = 'white',
   padding = 'lg',
-}) => {
+}: SectionProps) {
   const backgrounds = {
-    white: 'bg-white dark:bg-gray-900',
-    gray: 'bg-gray-50 dark:bg-gray-800/50',
-    dark: 'bg-gray-900 dark:bg-black text-white',
-  };
-
+    white: 'bg-white',
+    canvas: 'bg-canvas',
+    ink: 'bg-ink text-white',
+    gray: 'bg-canvas',
+    dark: 'bg-ink text-white',
+  }
   const paddings = {
-    sm: 'py-12',
-    md: 'py-16',
-    lg: 'py-20',
-  };
+    sm: 'py-14',
+    md: 'py-20',
+    lg: 'py-24 md:py-32',
+  }
 
   return (
-    <section
-      id={id}
-      className={cn(
-        backgrounds[background],
-        paddings[padding],
-        'transition-colors duration-200',
-        className
-      )}
-    >
+    <section id={id} className={cn(backgrounds[background], paddings[padding], className)}>
       {children}
     </section>
-  );
-};
-
-interface SectionHeaderProps {
-  title: string;
-  subtitle?: string;
-  centered?: boolean;
-  light?: boolean;
+  )
 }
 
-export const SectionHeader: React.FC<SectionHeaderProps> = ({
+interface SectionHeaderProps {
+  eyebrow?: string
+  title: string
+  subtitle?: string
+  centered?: boolean
+  light?: boolean
+}
+
+export function SectionHeader({
+  eyebrow,
   title,
   subtitle,
-  centered = true,
+  centered = false,
   light = false,
-}) => {
+}: SectionHeaderProps) {
   return (
-    <div className={cn('mb-12', centered && 'text-center')}>
+    <div className={cn('mb-12 md:mb-16', centered && 'text-center')}>
+      {eyebrow && <p className={cn('eyebrow mb-4', light && 'text-white/60')}>{eyebrow}</p>}
       <h2
         className={cn(
-          'text-4xl md:text-5xl font-bold mb-6',
-          light 
-            ? 'text-white' 
-            : 'text-gray-900 dark:text-white'
+          'text-4xl font-semibold leading-tight tracking-[-0.05em] md:text-5xl',
+          light ? 'text-white' : 'text-ink',
         )}
       >
         {title}
@@ -71,16 +65,14 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
       {subtitle && (
         <p
           className={cn(
-            'text-xl max-w-2xl',
+            'mt-5 max-w-2xl text-base leading-7 md:text-lg',
             centered && 'mx-auto',
-            light 
-              ? 'text-gray-300' 
-              : 'text-gray-600 dark:text-gray-300'
+            light ? 'text-white/65' : 'text-muted',
           )}
         >
           {subtitle}
         </p>
       )}
     </div>
-  );
-};
+  )
+}

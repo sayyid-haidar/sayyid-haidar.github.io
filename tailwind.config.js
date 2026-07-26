@@ -1,63 +1,49 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  darkMode: 'class',
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
-  safelist: [
-    // Employment type colors
-    'text-emerald-600',
-    'text-blue-600', 
-    'text-purple-600',
-    'text-rose-600',
-    'text-amber-600',
-    // Border colors
-    'border-gray-900',
-    'border-gray-300',
-    'border-gray-200',
-  ],
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
       fontFamily: {
-        'sans': ['Inter', 'system-ui', 'sans-serif'],
+        sans: [
+          'Inter',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          '"Segoe UI"',
+          'sans-serif',
+        ],
+        serif: ['Georgia', 'Cambria', '"Times New Roman"', 'serif'],
+        mono: ['"SFMono-Regular"', 'Consolas', '"Liberation Mono"', 'monospace'],
       },
       colors: {
-        gray: {
-          50: '#fafafa',
-          100: '#f5f5f5',
-          200: '#e5e5e5',
-          300: '#d4d4d4',
-          400: '#a3a3a3',
-          500: '#737373',
-          600: '#525252',
-          700: '#404040',
-          800: '#262626',
-          900: '#171717',
-          950: '#0a0a0a',
-        },
-      },
-      spacing: {
-        '18': '4.5rem',
-        '88': '22rem',
-        '128': '32rem',
+        ink: '#191918',
+        muted: '#787774',
+        subtle: '#9b9a97',
+        canvas: '#f7f7f5',
+        line: '#e9e9e7',
+        accent: '#2383e2',
+        'accent-soft': '#e7f3f8',
       },
       maxWidth: {
+        reading: '46rem',
         '8xl': '88rem',
       },
-      animation: {
-        'fade-in': 'fadeIn 0.5s ease-in-out',
-        'slide-up': 'slideUp 0.5s ease-out',
-      },
       keyframes: {
-        fadeIn: {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
         },
-        slideUp: {
-          '0%': { opacity: '0', transform: 'translateY(20px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
+        breathe: {
+          '0%, 100%': { transform: 'scale(1)', opacity: '0.86' },
+          '50%': { transform: 'scale(1.06)', opacity: '1' },
         },
+        orbit: {
+          to: { transform: 'rotate(360deg)' },
+        },
+      },
+      animation: {
+        float: 'float 4.8s ease-in-out infinite',
+        breathe: 'breathe 5.5s ease-in-out infinite',
+        orbit: 'orbit 22s linear infinite',
       },
     },
   },
