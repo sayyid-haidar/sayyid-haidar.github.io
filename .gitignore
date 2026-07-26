@@ -50,3 +50,6 @@ Thumbs.db
 reference/
 drafts/
 unused/
+
+# Local brainstorming artifacts
+.superpowers/
