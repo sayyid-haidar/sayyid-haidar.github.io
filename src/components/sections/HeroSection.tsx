@@ -5,20 +5,20 @@ import { NotionAvatar } from '../ui/NotionAvatar'
 
 export function HeroSection() {
   return (
-    <section className="flex min-h-[calc(100vh-72px)] items-center py-20 md:py-28">
+    <section className="py-16 md:py-20 lg:py-24">
       <Container size="xl">
-        <div className="grid items-center gap-12 lg:grid-cols-[1.35fr_0.65fr] lg:gap-16">
+        <div className="grid items-center gap-10 lg:grid-cols-[1.5fr_0.5fr] lg:gap-12">
           <div>
             <p className="eyebrow mb-5">Backend engineer · builder · writer</p>
-            <h1 className="display-title max-w-4xl text-[clamp(3.4rem,7.4vw,7.1rem)]">
+            <h1 className="display-title max-w-4xl text-[clamp(3.15rem,5.9vw,5.85rem)]">
               I build useful systems{' '}
               <span className="text-subtle">and document what I learn.</span>
             </h1>
-            <p className="mt-7 max-w-2xl text-base leading-8 text-muted md:text-lg">
+            <p className="mt-6 max-w-2xl text-base leading-8 text-muted md:text-lg">
               Selected software projects, practical cheatsheets, and long-form notes from
               solving real engineering problems.
             </p>
-            <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-7">
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-7">
               <Link
                 to="/projects"
                 className="inline-flex w-fit items-center gap-2 rounded-lg bg-ink px-5 py-3 text-sm font-medium text-white transition-transform hover:-translate-y-0.5"

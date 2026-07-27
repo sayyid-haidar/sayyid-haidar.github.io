@@ -1,6 +1,6 @@
 export function NotionAvatar() {
   return (
-    <div className="relative mx-auto grid aspect-square w-full max-w-[21rem] place-items-center">
+    <div className="relative mx-auto grid aspect-square w-full max-w-[18rem] place-items-center">
       <div
         aria-hidden="true"
         className="absolute inset-[9%] animate-breathe rounded-full bg-canvas motion-reduce:animate-none"
