@@ -64,10 +64,12 @@
 
   .prose-content h2 {
     @apply mb-4 mt-12 font-sans text-3xl font-semibold leading-tight tracking-[-0.04em] text-ink;
+    scroll-margin-top: 7rem;
   }
 
   .prose-content h3 {
     @apply mb-3 mt-9 font-sans text-2xl font-semibold tracking-[-0.035em] text-ink;
+    scroll-margin-top: 7rem;
   }
 
   .prose-content p,

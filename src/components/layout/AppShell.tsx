@@ -1,5 +1,9 @@
 import { useEffect } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
+import {
+  headingIdFromHash,
+  scheduleScrollToHeading,
+} from '../../lib/scrollToHeading'
 import { Navbar } from './Navbar'
 import { Footer } from './Footer'
 
@@ -8,10 +12,7 @@ export function AppShell() {
 
   useEffect(() => {
     if (location.hash) {
-      requestAnimationFrame(() => {
-        document.querySelector(location.hash)?.scrollIntoView({ behavior: 'smooth' })
-      })
-      return
+      return scheduleScrollToHeading(headingIdFromHash(location.hash))
     }
     window.scrollTo({ top: 0 })
   }, [location.pathname, location.hash])

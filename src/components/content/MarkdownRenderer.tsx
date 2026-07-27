@@ -1,22 +1,21 @@
-import { isValidElement, type ReactNode } from 'react'
-import GithubSlugger from 'github-slugger'
 import ReactMarkdown, { type Components } from 'react-markdown'
 import rehypeHighlight from 'rehype-highlight'
 import remarkGfm from 'remark-gfm'
 import { CodeBlock } from './CodeBlock'
-
-function nodeText(node: ReactNode): string {
-  if (typeof node === 'string' || typeof node === 'number') return String(node)
-  if (Array.isArray(node)) return node.map(nodeText).join('')
-  if (isValidElement<{ children?: ReactNode }>(node)) return nodeText(node.props.children)
-  return ''
-}
+import { rehypeHeadingIds } from './rehypeHeadingIds'
 
 export function MarkdownRenderer({ markdown }: { markdown: string }) {
-  const slugger = new GithubSlugger()
   const components: Components = {
-    h2: ({ children }) => <h2 id={slugger.slug(nodeText(children))}>{children}</h2>,
-    h3: ({ children }) => <h3 id={slugger.slug(nodeText(children))}>{children}</h3>,
+    h2: ({ children, id }) => (
+      <h2 id={id} tabIndex={-1}>
+        {children}
+      </h2>
+    ),
+    h3: ({ children, id }) => (
+      <h3 id={id} tabIndex={-1}>
+        {children}
+      </h3>
+    ),
     pre: ({ children }) => <CodeBlock>{children}</CodeBlock>,
     a: ({ href, children, ...props }) => {
       const external = href?.startsWith('http')
@@ -37,7 +36,7 @@ export function MarkdownRenderer({ markdown }: { markdown: string }) {
     <div className="prose-content">
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
-        rehypePlugins={[rehypeHighlight]}
+        rehypePlugins={[rehypeHeadingIds, rehypeHighlight]}
         components={components}
       >
         {markdown}

@@ -1,3 +1,4 @@
+import { StrictMode } from 'react'
 import { render, screen } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
 import { MarkdownRenderer } from './MarkdownRenderer'
@@ -10,6 +11,7 @@ describe('MarkdownRenderer', () => {
     )
 
     expect(screen.getByRole('heading', { name: 'Safe' })).toHaveAttribute('id', 'safe')
+    expect(screen.getByRole('heading', { name: 'Safe' })).toHaveAttribute('tabindex', '-1')
     expect(container.querySelector('input[type="checkbox"]')).toBeChecked()
     expect(container.querySelector('script')).not.toBeInTheDocument()
   })
@@ -18,6 +20,19 @@ describe('MarkdownRenderer', () => {
     expect(extractHeadings('## Setup\n\n## Setup')).toEqual([
       { id: 'setup', text: 'Setup', level: 2 },
       { id: 'setup-1', text: 'Setup', level: 2 },
+    ])
+  })
+
+  it('keeps heading IDs stable when StrictMode renders twice', () => {
+    render(
+      <StrictMode>
+        <MarkdownRenderer markdown={'## Setup\n\n## Setup'} />
+      </StrictMode>,
+    )
+
+    expect(screen.getAllByRole('heading').map((heading) => heading.id)).toEqual([
+      'setup',
+      'setup-1',
     ])
   })
 
