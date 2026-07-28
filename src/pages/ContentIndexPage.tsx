@@ -37,7 +37,7 @@ export function ContentIndexPage({ collection }: ContentIndexPageProps) {
       >
         {page.icon}
       </span>
-      <h1 className="mt-5 text-5xl font-semibold tracking-[-0.06em] text-ink md:text-6xl">
+      <h1 className="mt-5 text-balance text-5xl font-semibold tracking-[-0.06em] text-ink md:text-6xl">
         {page.title}
       </h1>
       <p className="mb-12 mt-4 max-w-2xl text-base leading-7 text-muted">

@@ -7,8 +7,10 @@ export function ProjectVisual({ project }: { project: ProjectContent }) {
         <img
           src={project.cover}
           alt={`${project.title} project preview`}
-          className="h-auto w-full object-cover"
-          loading="eager"
+          width={1600}
+          height={900}
+          className="aspect-video w-full object-cover"
+          loading="lazy"
         />
       </div>
     )

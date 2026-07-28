@@ -18,6 +18,7 @@ export function NotionAvatar() {
         height={800}
         className="relative z-10 w-[76%] animate-float object-contain motion-reduce:animate-none"
         loading="eager"
+        fetchPriority="high"
       />
     </div>
   )

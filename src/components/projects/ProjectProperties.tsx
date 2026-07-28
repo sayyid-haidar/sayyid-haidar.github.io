@@ -16,7 +16,7 @@ export function ProjectProperties({ project }: { project: ProjectContent }) {
         <p className="text-[0.65rem] font-semibold uppercase tracking-[0.11em] text-subtle">
           Stack
         </p>
-        <p className="mt-2 text-sm text-ink">{project.stack.join(', ')}</p>
+        <p className="mt-2 break-words text-sm text-ink">{project.stack.join(', ')}</p>
       </div>
       <div>
         <p className="text-[0.65rem] font-semibold uppercase tracking-[0.11em] text-subtle">
@@ -38,9 +38,9 @@ export function ProjectProperties({ project }: { project: ProjectContent }) {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-sm capitalize text-accent"
+                className="inline-flex items-center gap-1 text-sm capitalize text-accent hover:text-ink"
               >
-                {label} <ArrowUpRight size={13} />
+                {label} <ArrowUpRight aria-hidden="true" size={13} />
               </a>
             ))
           )}

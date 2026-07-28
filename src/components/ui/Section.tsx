@@ -56,7 +56,7 @@ export function SectionHeader({
       {eyebrow && <p className={cn('eyebrow mb-4', light && 'text-white/60')}>{eyebrow}</p>}
       <h2
         className={cn(
-          'text-4xl font-semibold leading-tight tracking-[-0.05em] md:text-5xl',
+          'text-balance text-4xl font-semibold leading-tight tracking-[-0.05em] md:text-5xl',
           light ? 'text-white' : 'text-ink',
         )}
       >

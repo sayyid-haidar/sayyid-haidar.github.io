@@ -17,6 +17,11 @@ export function MarkdownRenderer({ markdown }: { markdown: string }) {
       </h3>
     ),
     pre: ({ children }) => <CodeBlock>{children}</CodeBlock>,
+    table: ({ children, ...props }) => (
+      <div className="prose-table-scroll">
+        <table {...props}>{children}</table>
+      </div>
+    ),
     a: ({ href, children, ...props }) => {
       const external = href?.startsWith('http')
       return (

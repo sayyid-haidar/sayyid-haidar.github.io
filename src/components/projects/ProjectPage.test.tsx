@@ -1,8 +1,10 @@
 import { render, screen } from '@testing-library/react'
+import { MemoryRouter } from 'react-router-dom'
 import { describe, expect, it } from 'vitest'
 import type { ProjectContent } from '../../content/types'
 import { ProjectProperties } from './ProjectProperties'
 import { ProjectVisual } from './ProjectVisual'
+import { ProjectsSection } from '../sections/ProjectsSection'
 
 const project: ProjectContent = {
   collection: 'projects',
@@ -33,5 +35,22 @@ describe('project components', () => {
     render(<ProjectProperties project={project} />)
     expect(screen.getByText('Private project')).toBeInTheDocument()
     expect(screen.queryByRole('link')).not.toBeInTheDocument()
+  })
+
+  it('renders project cards with an h2 in the projects index', () => {
+    render(
+      <MemoryRouter>
+        <ProjectsSection projects={[project]} />
+      </MemoryRouter>,
+    )
+    expect(screen.getByRole('heading', { level: 2, name: project.title })).toBeInTheDocument()
+  })
+
+  it('reserves the agreed 16:9 dimensions for project covers', () => {
+    render(<ProjectVisual project={{ ...project, cover: '/cover.png' }} />)
+    const image = screen.getByRole('img', { name: /Example platform project preview/ })
+    expect(image).toHaveAttribute('width', '1600')
+    expect(image).toHaveAttribute('height', '900')
+    expect(image).toHaveAttribute('loading', 'lazy')
   })
 })

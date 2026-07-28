@@ -31,7 +31,7 @@ export function ProjectPage() {
           <p className="eyebrow text-accent">
             Selected work / {project.tags[0] ?? 'Engineering'}
           </p>
-          <h1 className="mt-5 max-w-5xl text-5xl font-semibold leading-[0.98] tracking-[-0.067em] text-ink md:text-7xl">
+          <h1 className="mt-5 max-w-5xl text-balance text-5xl font-semibold leading-[0.98] tracking-[-0.067em] text-ink md:text-7xl">
             {project.title}
           </h1>
           <p className="mt-6 max-w-3xl text-base leading-8 text-muted md:text-lg">

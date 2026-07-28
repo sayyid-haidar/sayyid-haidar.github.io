@@ -24,7 +24,10 @@ export function Navbar() {
       <header className="sticky top-0 z-50 border-b border-line/80 bg-white/90 backdrop-blur-xl">
         <Container size="xl">
           <nav className="flex h-[72px] items-center justify-between" aria-label="Primary">
-            <Link to="/" className="text-[15px] font-semibold tracking-[-0.035em] text-ink">
+            <Link
+              to="/"
+              className="text-[15px] font-semibold tracking-[-0.035em] text-ink hover:text-accent"
+            >
               Sayyid Haidar
             </Link>
 
@@ -54,10 +57,11 @@ export function Navbar() {
               type="button"
               aria-label="Open menu"
               aria-expanded={open}
+              aria-controls="mobile-navigation"
               onClick={() => setOpen(true)}
               className="rounded-lg p-2 text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent md:hidden"
             >
-              <Menu size={22} />
+              <Menu aria-hidden="true" size={22} />
             </button>
           </nav>
         </Container>

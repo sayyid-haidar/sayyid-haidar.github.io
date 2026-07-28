@@ -1,4 +1,5 @@
-import { useMemo, useState } from 'react'
+import { useMemo } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import type { KnowledgeContent } from '../../content/types'
 import { searchKnowledge } from '../../content/search'
 import { ContentFilters } from './ContentFilters'
@@ -10,13 +11,29 @@ interface ContentIndexProps {
 }
 
 export function ContentIndex({ items }: ContentIndexProps) {
-  const [query, setQuery] = useState('')
-  const [topic, setTopic] = useState('All')
+  const [searchParams, setSearchParams] = useSearchParams()
   const topics = useMemo(
     () => ['All', ...Array.from(new Set(items.map((item) => item.topic))).sort()],
     [items],
   )
+  const query = searchParams.get('q') ?? ''
+  const requestedTopic = searchParams.get('topic') ?? 'All'
+  const topic = topics.includes(requestedTopic) ? requestedTopic : 'All'
   const results = useMemo(() => searchKnowledge(items, query, topic), [items, query, topic])
+
+  function setQuery(value: string) {
+    const next = new URLSearchParams(searchParams)
+    if (value) next.set('q', value)
+    else next.delete('q')
+    setSearchParams(next, { replace: true })
+  }
+
+  function setTopic(value: string) {
+    const next = new URLSearchParams(searchParams)
+    if (value === 'All') next.delete('topic')
+    else next.set('topic', value)
+    setSearchParams(next)
+  }
 
   if (items.length === 0) {
     return (
@@ -37,22 +54,22 @@ export function ContentIndex({ items }: ContentIndexProps) {
         onTopicChange={setTopic}
         resultCount={results.length}
       />
-      <div className="border-t border-line">
-        <div className="hidden min-h-9 grid-cols-[minmax(18rem,1fr)_8rem_6rem_7rem] items-center border-b border-line text-[0.68rem] text-subtle md:grid">
-          <span>Name</span>
-          <span>Topic</span>
-          <span>Language</span>
-          <span className="text-right">Updated</span>
-        </div>
-        {results.length === 0 ? (
+      {results.length === 0 ? (
+        <div className="border-t border-line">
           <EmptyContentState
             title="No matching notes."
             description="Try another keyword or clear the active topic filter."
           />
-        ) : (
-          results.map((item) => <ContentRow key={item.slug} item={item} />)
-        )}
-      </div>
+        </div>
+      ) : (
+        <ul aria-label="Knowledge entries" className="border-t border-line">
+          {results.map((item) => (
+            <li key={item.slug}>
+              <ContentRow item={item} />
+            </li>
+          ))}
+        </ul>
+      )}
     </>
   )
 }

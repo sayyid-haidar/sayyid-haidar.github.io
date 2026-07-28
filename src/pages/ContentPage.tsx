@@ -37,7 +37,7 @@ export function ContentPage({ collection }: ContentPageProps) {
       <div className="grid gap-14 lg:grid-cols-[minmax(0,1fr)_12rem]">
         <article className="min-w-0">
           <div className="text-5xl" aria-hidden="true">{item.icon}</div>
-          <h1 className="mt-5 max-w-4xl text-5xl font-semibold leading-[1.05] tracking-[-0.06em] text-ink md:text-6xl">
+          <h1 className="mt-5 max-w-4xl text-balance text-5xl font-semibold leading-[1.05] tracking-[-0.06em] text-ink md:text-6xl">
             {item.title}
           </h1>
           <p className="mt-5 max-w-3xl text-base leading-7 text-muted md:text-lg">

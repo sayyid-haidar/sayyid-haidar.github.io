@@ -23,13 +23,13 @@ export function HeroSection() {
                 to="/projects"
                 className="inline-flex w-fit items-center gap-2 rounded-lg bg-ink px-5 py-3 text-sm font-medium text-white transition-transform hover:-translate-y-0.5"
               >
-                Explore my work <ArrowRight size={16} />
+                Explore my work <ArrowRight aria-hidden="true" size={16} />
               </Link>
               <Link
                 to="/cheatsheets"
                 className="inline-flex w-fit items-center gap-2 text-sm font-medium text-muted hover:text-ink"
               >
-                Read my notes <ArrowRight size={16} />
+                Read my notes <ArrowRight aria-hidden="true" size={16} />
               </Link>
             </div>
           </div>

@@ -33,3 +33,21 @@ Object.defineProperty(window, 'scrollTo', {
   writable: true,
   value: () => undefined,
 })
+
+if (typeof HTMLDialogElement !== 'undefined') {
+  Object.defineProperty(HTMLDialogElement.prototype, 'showModal', {
+    configurable: true,
+    value(this: HTMLDialogElement) {
+      this.setAttribute('open', '')
+      this.querySelector<HTMLElement>('button, a[href]')?.focus()
+    },
+  })
+
+  Object.defineProperty(HTMLDialogElement.prototype, 'close', {
+    configurable: true,
+    value(this: HTMLDialogElement) {
+      this.removeAttribute('open')
+      this.dispatchEvent(new Event('close'))
+    },
+  })
+}

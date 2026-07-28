@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { MemoryRouter } from 'react-router-dom'
+import { MemoryRouter, useLocation } from 'react-router-dom'
 import { describe, expect, it } from 'vitest'
 import type { KnowledgeContent } from '../../content/types'
 import { ContentIndex } from './ContentIndex'
@@ -38,6 +38,10 @@ const items: KnowledgeContent[] = [
   },
 ]
 
+function CurrentSearch() {
+  return <output aria-label="Current search">{useLocation().search}</output>
+}
+
 describe('ContentIndex', () => {
   it('combines search and topic filters', async () => {
     const user = userEvent.setup()
@@ -62,5 +66,32 @@ describe('ContentIndex', () => {
 
     expect(screen.getByText('Indonesia')).toBeInTheDocument()
     expect(screen.getByText('English')).toBeInTheDocument()
+    expect(screen.getByRole('list', { name: 'Knowledge entries' })).toBeInTheDocument()
+  })
+
+  it('reads and writes filters through the URL', async () => {
+    const user = userEvent.setup()
+    render(
+      <MemoryRouter initialEntries={['/?q=git&topic=Tools']}>
+        <ContentIndex items={items} />
+        <CurrentSearch />
+      </MemoryRouter>,
+    )
+
+    const search = screen.getByRole('searchbox', { name: 'Search content' })
+    expect(search).toHaveValue('git')
+    expect(screen.getByRole('button', { name: 'Tools' })).toHaveAttribute(
+      'aria-pressed',
+      'true',
+    )
+    expect(screen.getByRole('link', { name: /Git recovery/ })).toBeInTheDocument()
+    expect(screen.queryByRole('link', { name: /PostgreSQL commands/ })).not.toBeInTheDocument()
+
+    await user.clear(search)
+    await user.type(search, 'post')
+
+    const params = new URLSearchParams(screen.getByLabelText('Current search').textContent ?? '')
+    expect(params.get('q')).toBe('post')
+    expect(params.get('topic')).toBe('Tools')
   })
 })

@@ -27,7 +27,7 @@ export function SelectedWorkSection({ projects }: SelectedWorkSectionProps) {
             to="/projects"
             className="mb-16 hidden items-center gap-2 text-sm text-muted hover:text-ink sm:flex"
           >
-            All projects <ArrowRight size={15} />
+            All projects <ArrowRight aria-hidden="true" size={15} />
           </Link>
         </div>
         <div className="grid gap-5 md:grid-cols-[1.35fr_0.65fr]">

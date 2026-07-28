@@ -26,11 +26,16 @@ function KnowledgeColumn({
     <div>
       <div className="mb-3 flex items-center justify-between">
         <h3 className="flex items-center gap-2 text-sm font-semibold text-ink">
-          <span className="grid h-8 w-8 place-items-center rounded-md bg-canvas">{icon}</span>
+          <span
+            aria-hidden="true"
+            className="grid h-8 w-8 place-items-center rounded-md bg-canvas"
+          >
+            {icon}
+          </span>
           {title}
         </h3>
         <Link to={to} aria-label={`View all ${title}`} className="text-muted hover:text-ink">
-          <ArrowRight size={16} />
+          <ArrowRight aria-hidden="true" size={16} />
         </Link>
       </div>
       {items.slice(0, 3).map((item) => (

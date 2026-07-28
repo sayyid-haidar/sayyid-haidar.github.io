@@ -40,10 +40,10 @@ export function CodeBlock({ children }: { children?: ReactNode }) {
           type="button"
           onClick={copy}
           className="inline-flex items-center gap-1.5 rounded px-2 py-1 text-gray-300 hover:bg-white/10 hover:text-white"
-          aria-label="Copy code"
+          aria-label={copied ? 'Code copied' : 'Copy code'}
         >
-          {copied ? <Check size={13} /> : <Copy size={13} />}
-          {copied ? 'Copied' : 'Copy'}
+          {copied ? <Check aria-hidden="true" size={13} /> : <Copy aria-hidden="true" size={13} />}
+          <span aria-live="polite">{copied ? 'Copied' : 'Copy'}</span>
         </button>
       </div>
       <pre className="overflow-x-auto p-5 text-[0.82rem] leading-7">{children}</pre>

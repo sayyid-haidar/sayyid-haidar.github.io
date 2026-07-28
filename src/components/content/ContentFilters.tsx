@@ -24,6 +24,7 @@ export function ContentFilters({
               key={topic}
               type="button"
               onClick={() => onTopicChange(topic)}
+              aria-pressed={activeTopic === topic}
               className={`shrink-0 rounded-md px-3 py-2 text-xs transition ${
                 activeTopic === topic
                   ? 'bg-white font-semibold text-ink shadow-sm'
@@ -38,10 +39,12 @@ export function ContentFilters({
           <span className="sr-only">Search content</span>
           <input
             type="search"
+            name="knowledge-search"
+            autoComplete="off"
             value={query}
             onChange={(event) => onQueryChange(event.target.value)}
             placeholder="Search notes…"
-            className="w-full rounded-lg border border-line bg-white px-4 py-2.5 text-sm text-ink placeholder:text-subtle focus:border-accent focus:outline-none"
+            className="w-full rounded-lg border border-line bg-white px-4 py-2.5 text-sm text-ink placeholder:text-subtle focus-visible:border-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/30"
           />
         </label>
       </div>

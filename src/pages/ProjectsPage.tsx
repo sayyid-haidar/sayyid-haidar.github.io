@@ -11,7 +11,7 @@ export function ProjectsPage() {
   return (
     <Container size="xl" className="min-h-[70vh] py-20 md:py-28">
       <p className="eyebrow">Selected work</p>
-      <h1 className="mt-4 max-w-4xl text-5xl font-semibold leading-[1.02] tracking-[-0.06em] text-ink md:text-7xl">
+      <h1 className="mt-4 max-w-4xl text-balance text-5xl font-semibold leading-[1.02] tracking-[-0.06em] text-ink md:text-7xl">
         Useful systems, thoughtfully built.
       </h1>
       <p className="mb-14 mt-5 max-w-2xl text-base leading-7 text-muted">
